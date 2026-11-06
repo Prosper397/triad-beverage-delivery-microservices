@@ -1,233 +1,305 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Triad Beverage Delivery | ESSIVIVI-Sarl</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <style>
-    :root{--green:#145c45;--green2:#1d795b;--orange:#f28c28;--cream:#f7f5ef;--ink:#17231f;--muted:#718078}
-    *{box-sizing:border-box} body{font-family:Inter,sans-serif;background:var(--cream);color:var(--ink)}
-    h1,h2,h3,.brand{font-family:Poppins,sans-serif}
-    .view{display:none}.view.active{display:block}
-    .nav-btn{border:1px solid #e5e7eb;background:white;color:#475569;border-radius:14px;padding:10px 15px;font-weight:700;transition:.2s}
-    .nav-btn.active{background:var(--green);border-color:var(--green);color:white;box-shadow:0 7px 18px #145c4530}
-    .panel{background:white;border:1px solid #eceee9;border-radius:22px;box-shadow:0 10px 30px #1b34200b}
-    .phone-shell{width:min(100%,390px);min-height:760px;margin:auto;background:#fff;border:9px solid #17231f;border-radius:38px;overflow:hidden;box-shadow:0 25px 70px #10251d25;position:relative}
-    .phone-screen{min-height:742px;background:#fbfcfa;position:relative;padding-bottom:82px}
-    .phone-header{background:var(--green);color:white;padding:22px 19px 18px;border-radius:0 0 24px 24px}
-    .pill{border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800}
-    .product-card{background:white;border:1px solid #edf0eb;border-radius:17px;padding:12px;box-shadow:0 5px 15px #142b1d08}
-    .product-art{height:96px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:43px}
-    .primary{background:var(--orange);color:#fff;font-weight:800;border-radius:13px;padding:12px 15px;transition:.2s}
-    .primary:hover{filter:brightness(.96);transform:translateY(-1px)}
-    .green-btn{background:var(--green);color:#fff;font-weight:800;border-radius:13px;padding:12px 15px}
-    .bottom-nav{position:absolute;bottom:0;left:0;right:0;background:white;border-top:1px solid #edf0eb;display:flex;justify-content:space-around;padding:13px 5px 17px;color:#7a8981;font-size:11px}
-    .bottom-nav i{display:block;text-align:center;font-size:18px;margin-bottom:4px}
-    .map-grid{background-color:#e7eee7;background-image:linear-gradient(35deg,transparent 45%,#fff 46%,#fff 50%,transparent 51%),linear-gradient(125deg,transparent 43%,#fff 44%,#fff 48%,transparent 49%),linear-gradient(#d2dfd4 1px,transparent 1px),linear-gradient(90deg,#d2dfd4 1px,transparent 1px);background-size:90px 80px,110px 90px,35px 35px,35px 35px}
-    .sidebar{background:#122b22;color:#c7d5ce}
-    .side-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;font-size:13px;font-weight:600;color:#b8c9c0}
-    .side-link.active,.side-link:hover{background:#24523f;color:white}
-    .kpi{background:white;border:1px solid #edf0eb;border-radius:18px;padding:19px;box-shadow:0 7px 20px #10251d08}
-    .bar{border-radius:7px 7px 0 0;background:linear-gradient(180deg,#f7a23e,#e87922);min-width:16px;flex:1}
-    .table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:850px}th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#7b8982;background:#f7f9f6;text-align:left;padding:13px}td{font-size:12px;padding:14px 13px;border-top:1px solid #eef1ed;white-space:nowrap}
-    .modal-backdrop{display:none;position:fixed;inset:0;background:#10251dcc;z-index:50;align-items:center;justify-content:center;padding:18px}.modal-backdrop.show{display:flex}
-    .modal{background:white;border-radius:23px;width:min(100%,440px);padding:25px;box-shadow:0 25px 70px #0003}
-    .field{width:100%;border:1px solid #dfe6df;border-radius:12px;padding:12px 13px;outline:none;background:white}.field:focus{border-color:var(--green2);box-shadow:0 0 0 3px #1d795b18}
-    .gps-dot{width:12px;height:12px;background:#e85d4a;border:3px solid white;border-radius:50%;box-shadow:0 0 0 5px #e85d4a30}
-    @media(max-width:760px){.desktop-layout{display:block!important}.sidebar{display:none}.manager-main{padding:15px!important}.manager-grid{grid-template-columns:1fr!important}.manager-kpis{grid-template-columns:1fr!important}.hide-mobile{display:none}.phone-shell{border-width:7px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triad Beverage Delivery – Maquette</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--g:#145c45;--g2:#1d795b;--o:#f28c28;--cream:#f7f5ef;--ink:#17231f}
+body{font-family:Inter,sans-serif;background:var(--cream);color:var(--ink)}
+h1,h2,h3,.brand{font-family:Poppins,sans-serif}
+.view{display:none}.view.on{display:block}
+.tab{padding:9px 14px;border-radius:10px;font-weight:600;font-size:14px;color:#475569;border:1px solid #e0ddd3;background:#fff}
+.tab.on{background:var(--g);border-color:var(--g);color:#fff}
+.phone{width:min(100%,390px);margin:auto;border:9px solid var(--ink);border-radius:38px;overflow:hidden;background:#fbfcfa;position:relative;min-height:780px}
+.ph-head{background:var(--g);color:#fff;padding:20px 18px 18px;border-radius:0 0 22px 22px}
+.card{background:#fff;border:1px solid #e8eae4;border-radius:14px}
+.panel{background:#fff;border:1px solid #dfe3dc;border-radius:6px}
+.btn{background:var(--o);color:#fff;font-weight:700;border-radius:12px;padding:11px 14px}
+.btn:disabled{background:#e2e8f0;color:#94a3b8;cursor:not-allowed}
+.btn-g{background:var(--g);color:#fff;font-weight:700;border-radius:12px;padding:11px 14px}
+.field{width:100%;border:1px solid #dfe6df;border-radius:12px;padding:11px 12px;background:#fff}
+.field:focus,button:focus-visible{outline:2px solid var(--g2);outline-offset:2px}
+.pill{font-size:11px;font-weight:600;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.map{background-color:#e7eee7;background-image:linear-gradient(35deg,transparent 45%,#fff 46%,#fff 50%,transparent 51%),linear-gradient(125deg,transparent 43%,#fff 44%,#fff 48%,transparent 49%),linear-gradient(#d6e2d8 1px,transparent 1px),linear-gradient(90deg,#d6e2d8 1px,transparent 1px);background-size:90px 80px,110px 90px,32px 32px,32px 32px}
+.bnav{position:absolute;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e8eae4;display:flex;justify-content:space-around;padding:11px 4px 15px;color:#7a8981;font-size:11px;text-align:center}
+.bnav i{display:block;font-size:18px;margin-bottom:3px}
+.side{display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:6px;color:#b8c9c0;font-weight:500;width:100%;text-align:left}
+.side.on,.side:hover{background:#24523f;color:#fff}
+.tb{border-collapse:collapse;width:100%;min-width:860px}
+.tb th{font-size:12px;font-weight:600;color:#6b7a73;background:#f4f6f2;text-align:left;padding:10px 12px}
+.tb td{font-size:13px;padding:11px 12px;border-top:1px solid #eceee9;white-space:nowrap}
+.modal-bg{display:none;position:fixed;inset:0;background:#10251dcc;z-index:50;align-items:center;justify-content:center;padding:16px}
+.modal-bg.on{display:flex}
+.modal{background:#fff;border-radius:18px;width:min(100%,420px);padding:24px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-emerald-900 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-bottle-water"></i></div>
-        <div><div class="brand font-extrabold text-lg leading-tight">triad<span class="text-orange-500">.</span></div><div class="text-[10px] tracking-widest text-slate-500 font-bold">ESSIVIVI-SARL</div></div>
-      </div>
-      <nav class="flex flex-wrap gap-2" aria-label="Navigation des interfaces">
-        <button class="nav-btn active" data-view="client"><i class="fa-solid fa-bag-shopping mr-2"></i>Client</button>
-        <button class="nav-btn" data-view="manager"><i class="fa-solid fa-chart-line mr-2"></i>Gestionnaire</button>
-        <button class="nav-btn" data-view="agent"><i class="fa-solid fa-truck-fast mr-2"></i>Agent commercial</button>
-      </nav>
-      <span class="hidden md:block text-xs text-slate-500"><i class="fa-solid fa-circle text-emerald-500 text-[8px] mr-1"></i>Prototype interactif</span>
-    </div>
-  </header>
-
-  <main class="max-w-7xl mx-auto p-4 md:p-7">
-    <!-- VUE CLIENT -->
-    <section id="view-client" class="view active">
-      <div class="text-center mb-5"><p class="text-xs font-extrabold tracking-[.2em] text-emerald-800 uppercase">Espace client · Mobile</p><h1 class="text-2xl md:text-3xl font-extrabold mt-1">Commandez vos boissons préférées</h1><p class="text-sm text-slate-500 mt-1">Une expérience simple, rapide et locale.</p></div>
-      <div class="phone-shell"><div class="phone-screen">
-        <div class="phone-header">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center gap-2"><div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center"><i class="fa-solid fa-bottle-water"></i></div><div><div class="brand font-extrabold text-lg">triad<span class="text-orange-300">.</span></div><div class="text-[9px] text-emerald-100 tracking-widest">ESSIVIVI-SARL</div></div></div>
-            <button onclick="openModal('authModal')" class="text-xs bg-white/15 px-3 py-2 rounded-xl"><i class="fa-solid fa-shield-halved mr-1"></i> Connexion 2FA</button>
-          </div>
-          <div class="mt-5 flex gap-2"><div class="flex-1 bg-white rounded-xl flex items-center px-3 text-slate-400"><i class="fa-solid fa-magnifying-glass"></i><input class="w-full p-3 text-sm outline-none text-slate-700" placeholder="Rechercher une boisson..."></div><button class="bg-orange-500 rounded-xl px-4 relative"><i class="fa-solid fa-cart-shopping text-white"></i><span id="cartBadge" class="absolute -top-2 -right-2 bg-white text-emerald-900 text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-bold">0</span></button></div>
-        </div>
-        <div class="px-4 pt-4">
-          <div class="rounded-2xl p-4 text-white overflow-hidden relative" style="background:linear-gradient(115deg,#174b39,#26785a)">
-            <div class="relative z-10 max-w-[68%]"><span class="text-[10px] uppercase tracking-widest text-emerald-100 font-bold">Fraîcheur garantie</span><h2 class="font-extrabold text-xl leading-tight mt-1">Le plaisir arrive jusqu'à vous.</h2><p class="text-[11px] text-emerald-100 mt-2">Vos boissons, livrées en toute simplicité.</p></div><div class="absolute right-3 bottom-0 text-6xl opacity-90">🥤</div>
-          </div>
-          <div class="flex justify-between items-center mt-5 mb-3"><h3 class="font-extrabold">Notre catalogue</h3><span class="text-[11px] text-emerald-800 font-bold">Tout voir <i class="fa-solid fa-arrow-right ml-1"></i></span></div>
-          <div class="grid grid-cols-2 gap-3">
-            <article class="product-card"><div class="product-art bg-red-50">🥤</div><div class="font-bold text-sm mt-2">Coca-Cola</div><div class="text-[10px] text-slate-400">Bouteille · 1,5 L</div><div class="flex items-center justify-between mt-3"><b class="text-sm text-emerald-900">1 000 F</b><button onclick="addToCart('Coca-Cola',1000)" class="w-8 h-8 rounded-xl bg-orange-500 text-white"><i class="fa-solid fa-plus"></i></button></div></article>
-            <article class="product-card"><div class="product-art bg-green-50">🍏</div><div class="font-bold text-sm mt-2">Sprite</div><div class="text-[10px] text-slate-400">Bouteille · 1,5 L</div><div class="flex items-center justify-between mt-3"><b class="text-sm text-emerald-900">1 000 F</b><button onclick="addToCart('Sprite',1000)" class="w-8 h-8 rounded-xl bg-orange-500 text-white"><i class="fa-solid fa-plus"></i></button></div></article>
-            <article class="product-card"><div class="product-art bg-orange-50">🧃</div><div class="font-bold text-sm mt-2">Jus d'orange</div><div class="text-[10px] text-slate-400">Bouteille · 1 L</div><div class="flex items-center justify-between mt-3"><b class="text-sm text-emerald-900">1 500 F</b><button onclick="addToCart('Jus d’orange',1500)" class="w-8 h-8 rounded-xl bg-orange-500 text-white"><i class="fa-solid fa-plus"></i></button></div></article>
-            <article class="product-card"><div class="product-art bg-amber-50">🍺</div><div class="font-bold text-sm mt-2">Bière locale</div><div class="text-[10px] text-slate-400">Bouteille · 65 cl</div><div class="flex items-center justify-between mt-3"><b class="text-sm text-emerald-900">800 F</b><button onclick="addToCart('Bière locale',800)" class="w-8 h-8 rounded-xl bg-orange-500 text-white"><i class="fa-solid fa-plus"></i></button></div></article>
-          </div>
-          <div class="mt-4 bg-white border border-stone-100 rounded-2xl p-3">
-            <div class="flex justify-between text-sm"><span class="font-bold">Mon panier</span><span id="cartCount" class="text-slate-400">0 article</span></div>
-            <div class="flex justify-between items-center mt-2"><span class="text-xs text-slate-500">Total estimé</span><b id="cartTotal" class="text-emerald-900">0 FCFA</b></div>
-          </div>
-          <div class="mt-4">
-            <div class="flex justify-between items-center mb-2"><h3 class="font-extrabold text-sm">Point de livraison</h3><span class="text-[10px] text-emerald-700 font-bold">GPS actif</span></div>
-            <div class="map-grid h-36 rounded-2xl relative overflow-hidden border border-emerald-100">
-              <div class="absolute left-[47%] top-[38%] text-emerald-900 text-3xl"><i class="fa-solid fa-location-dot"></i></div><div class="absolute left-[18%] top-[20%] text-[9px] bg-white/90 rounded px-2 py-1">Dépôt ESSIVIVI</div><div class="absolute right-3 bottom-3 bg-white rounded-lg px-2 py-1 text-[9px] shadow">Lomé · Togo</div>
-            </div>
-            <p class="text-[11px] text-amber-700 bg-amber-50 rounded-xl p-3 mt-2 leading-relaxed"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Vérification de la distance... Vous êtes à <b>2,5 km</b>. Vous devez être à moins de <b>1 km</b> pour valider.</p>
-            <button disabled class="w-full mt-2 rounded-xl bg-slate-200 text-slate-400 font-bold py-3 cursor-not-allowed">Valider la commande <i class="fa-solid fa-lock ml-1"></i></button>
-          </div>
-          <button onclick="unlockTour()" class="w-full mt-4 rounded-2xl p-4 text-left text-white flex items-center justify-between" style="background:linear-gradient(100deg,#593b91,#8b5cc7)"><span><b class="block text-sm"><i class="fa-solid fa-vr-cardboard mr-2"></i>Visite guidée à 360°</b><small class="text-purple-100 text-[10px]">Découvrez notre dépôt en 3D</small></span><span class="bg-white text-purple-800 rounded-full px-3 py-2 text-[10px] font-extrabold">200 FCFA<br>pour débloquer</span></button>
-        </div>
-        <div class="bottom-nav"><div class="text-emerald-800"><i class="fa-solid fa-house"></i>Accueil</div><div><i class="fa-solid fa-list"></i>Catalogue</div><div><i class="fa-solid fa-cart-shopping"></i>Panier</div><div><i class="fa-regular fa-user"></i>Profil</div></div>
-      </div></div>
-    </section>
-
-    <!-- VUE GESTIONNAIRE -->
-    <section id="view-manager" class="view">
-      <div class="text-center mb-5"><p class="text-xs font-extrabold tracking-[.2em] text-emerald-800 uppercase">Espace gestionnaire · Desktop</p><h1 class="text-2xl md:text-3xl font-extrabold mt-1">Pilotage de l'activité</h1></div>
-      <div class="panel overflow-hidden">
-        <div class="desktop-layout flex min-h-[760px]">
-          <aside class="sidebar w-60 shrink-0 p-5 flex flex-col">
-            <div class="flex items-center gap-3 mb-10"><div class="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center text-white"><i class="fa-solid fa-bottle-water"></i></div><div class="brand font-extrabold text-xl text-white">triad<span class="text-orange-400">.</span><div class="text-[9px] tracking-widest text-emerald-200">ADMINISTRATION</div></div></div>
-            <div class="text-[9px] uppercase tracking-widest text-emerald-300 font-bold mb-3 px-3">Menu principal</div>
-            <a class="side-link active" href="#"><i class="fa-solid fa-chart-pie w-4"></i>Tableau de bord</a><a class="side-link" href="#"><i class="fa-solid fa-users w-4"></i>Clients</a><a class="side-link" href="#"><i class="fa-solid fa-truck-fast w-4"></i>Agents</a><a class="side-link" href="#"><i class="fa-solid fa-boxes-stacked w-4"></i>Stocks & boissons</a><a class="side-link" href="#"><i class="fa-solid fa-gear w-4"></i>Paramètres</a>
-            <div class="mt-auto bg-white/10 rounded-2xl p-3 text-xs"><i class="fa-solid fa-shield-halved text-orange-300 mr-1"></i><b class="text-white">Accès sécurisé</b><p class="text-emerald-100 text-[10px] mt-1">Rôles et permissions administrateur</p><button onclick="alert('Gestion des rôles : Admin, Superviseur, Agent. Démonstration uniquement.')" class="mt-3 text-orange-200 font-bold">Gérer les droits →</button></div>
-          </aside>
-          <div class="manager-main flex-1 p-7 bg-[#f7f8f5] min-w-0">
-            <div class="flex flex-wrap justify-between items-center gap-3 mb-7"><div><p class="text-xs text-slate-500">Vendredi 06 novembre 2026</p><h2 class="text-2xl font-extrabold mt-1">Vue d'ensemble <span class="text-slate-400 font-medium">/ ESSIVIVI-Sarl</span></h2></div><div class="flex items-center gap-3"><button class="w-10 h-10 bg-white rounded-xl border border-stone-200 text-slate-500"><i class="fa-regular fa-bell"></i></button><div class="flex items-center gap-2"><div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold">AD</div><div><b class="text-xs block">Admin Dépôt</b><span class="text-[10px] text-slate-400">Administrateur</span></div></div></div></div>
-            <div class="manager-kpis grid grid-cols-3 gap-4 mb-5">
-              <div class="kpi"><div class="flex justify-between text-slate-400 text-xs"><span>Chiffre d'affaires</span><i class="fa-solid fa-wallet text-emerald-700"></i></div><div class="text-2xl font-extrabold mt-3">2 845 000 <small class="text-xs">FCFA</small></div><div class="text-[10px] text-emerald-700 mt-2 font-bold"><i class="fa-solid fa-arrow-trend-up"></i> +12,8% ce mois</div></div>
-              <div class="kpi"><div class="flex justify-between text-slate-400 text-xs"><span>Livraisons réalisées</span><i class="fa-solid fa-truck text-orange-500"></i></div><div class="text-2xl font-extrabold mt-3">1 248</div><div class="text-[10px] text-emerald-700 mt-2 font-bold"><i class="fa-solid fa-arrow-trend-up"></i> +8,3% ce mois</div></div>
-              <div class="kpi"><div class="flex justify-between text-slate-400 text-xs"><span>Agent performant</span><i class="fa-solid fa-medal text-amber-500"></i></div><div class="text-xl font-extrabold mt-3">Koffi Mensah</div><div class="text-[10px] text-slate-500 mt-2">186 livraisons · 98% réussies</div></div>
-            </div>
-            <div class="manager-grid grid grid-cols-3 gap-4 mb-5">
-              <div class="kpi col-span-2"><div class="flex justify-between items-center"><div><h3 class="font-extrabold text-sm">Évolution des ventes</h3><p class="text-[10px] text-slate-400 mt-1">Chiffre d'affaires · 7 derniers jours</p></div><span class="text-[10px] bg-emerald-50 text-emerald-800 rounded-lg px-2 py-1 font-bold">Cette semaine</span></div>
-                <div class="h-44 flex items-end gap-3 mt-5 px-2 border-b border-l border-stone-100 pb-1">
-                  <div class="bar" style="height:45%"></div><div class="bar" style="height:67%"></div><div class="bar" style="height:53%"></div><div class="bar" style="height:80%"></div><div class="bar" style="height:61%"></div><div class="bar" style="height:92%"></div><div class="bar" style="height:74%"></div>
-                </div><div class="flex justify-between text-[9px] text-slate-400 mt-2 px-1"><span>Lun.</span><span>Mar.</span><span>Mer.</span><span>Jeu.</span><span>Ven.</span><span>Sam.</span><span>Dim.</span></div>
-              </div>
-              <div class="kpi"><h3 class="font-extrabold text-sm">Boissons populaires</h3><p class="text-[10px] text-slate-400 mt-1">Part des ventes</p><div class="flex items-center justify-center py-4"><div class="w-28 h-28 rounded-full" style="background:conic-gradient(#145c45 0 40%,#f28c28 40% 68%,#f5c451 68% 88%,#9eb8a9 88% 100%)"><div class="w-16 h-16 bg-white rounded-full m-6"></div></div></div><div class="space-y-2 text-[10px]"><div class="flex justify-between"><span><i class="fa-solid fa-circle text-emerald-800 mr-1"></i>Coca-Cola</span><b>40%</b></div><div class="flex justify-between"><span><i class="fa-solid fa-circle text-orange-500 mr-1"></i>Sprite</span><b>28%</b></div><div class="flex justify-between"><span><i class="fa-solid fa-circle text-amber-400 mr-1"></i>Jus</span><b>20%</b></div><div class="flex justify-between"><span><i class="fa-solid fa-circle text-emerald-200 mr-1"></i>Autres</span><b>12%</b></div></div></div>
-            </div>
-            <div class="rounded-2xl p-4 mb-5 flex flex-wrap items-center justify-between gap-3 text-white" style="background:linear-gradient(100deg,#174b39,#287b5b)"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center text-2xl text-orange-300"><i class="fa-solid fa-trophy"></i></div><div><div class="text-[10px] uppercase tracking-widest text-emerald-100">Performance des points de dépôt</div><h3 class="font-extrabold text-lg">Le Bar Le Roi</h3><p class="text-xs text-emerald-100">Point de dépôt le plus rentable · <b class="text-white">15 livraisons</b></p></div></div><div class="text-right"><div class="text-2xl font-extrabold">385 000 F</div><div class="text-[10px] text-emerald-100">Montant perçu estimé</div></div></div>
-            <div class="kpi"><div class="flex justify-between items-center mb-3"><div><h3 class="font-extrabold text-sm">Dernières transactions</h3><p class="text-[10px] text-slate-400 mt-1">Suivi des dépôts et livraisons</p></div><button class="text-xs text-emerald-800 font-bold">Exporter <i class="fa-solid fa-download ml-1"></i></button></div>
-              <div class="table-wrap"><table><thead><tr><th>ID Agent</th><th>Tél. client</th><th>Adresse</th><th>GPS (lat / long)</th><th>Qté</th><th>Montant</th><th>Heure</th></tr></thead><tbody>
-                <tr><td class="font-bold">AGT-001</td><td>+228 90 12 34 56</td><td>Tokoin, Lomé</td><td>6.1724 / 1.2314</td><td>12</td><td class="font-bold">18 000 F</td><td>14:32</td></tr>
-                <tr><td class="font-bold">AGT-003</td><td>+228 91 45 67 89</td><td>Adidogomé, Lomé</td><td>6.2011 / 1.1668</td><td>8</td><td class="font-bold">12 500 F</td><td>14:18</td></tr>
-                <tr><td class="font-bold">AGT-002</td><td>+228 99 87 65 43</td><td>Bè, Lomé</td><td>6.1372 / 1.2548</td><td>20</td><td class="font-bold">26 000 F</td><td>13:56</td></tr>
-                <tr><td class="font-bold">AGT-001</td><td>+228 92 22 11 00</td><td>Nyékonakpoè</td><td>6.1285 / 1.2132</td><td>6</td><td class="font-bold">9 000 F</td><td>13:41</td></tr>
-              </tbody></table></div><div class="flex justify-between items-center mt-4 text-[10px] text-slate-400"><span>Affichage de 1 à 4 sur 128 lignes</span><div class="flex gap-1"><button class="border rounded-lg px-3 py-1">Préc.</button><button class="bg-emerald-900 text-white rounded-lg px-3 py-1">1</button><button class="border rounded-lg px-3 py-1">2</button><button class="border rounded-lg px-3 py-1">3</button><button class="border rounded-lg px-3 py-1">Suiv.</button></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VUE AGENT -->
-    <section id="view-agent" class="view">
-      <div class="text-center mb-5"><p class="text-xs font-extrabold tracking-[.2em] text-emerald-800 uppercase">Espace terrain · Mobile</p><h1 class="text-2xl md:text-3xl font-extrabold mt-1">Votre journée sur le terrain</h1></div>
-      <div class="phone-shell"><div class="phone-screen">
-        <div class="phone-header">
-          <div class="flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-full bg-orange-300 text-emerald-950 flex items-center justify-center font-extrabold">KM</div><div><p class="text-[10px] text-emerald-100">Bonjour, agent</p><h2 class="font-extrabold">Koffi Mensah</h2></div></div><span class="pill bg-emerald-300 text-emerald-950"><i class="fa-solid fa-circle text-[7px] mr-1"></i> EN LIGNE</span></div>
-          <div class="grid grid-cols-2 gap-2 mt-5"><div class="bg-white/10 rounded-xl p-3"><p class="text-[10px] text-emerald-100">Ventes du jour</p><b class="text-xl">85 500 F</b></div><div class="bg-white/10 rounded-xl p-3"><p class="text-[10px] text-emerald-100">Livraisons</p><b class="text-xl">8 <small class="text-xs font-normal">/ 12</small></b></div></div>
-        </div>
-        <div class="px-4 pt-4">
-          <div class="bg-white rounded-2xl border border-stone-100 p-4"><div class="flex justify-between items-center"><b class="text-sm">Objectif quotidien</b><span class="text-[10px] text-emerald-800 font-extrabold">67%</span></div><div class="h-2 bg-stone-100 rounded-full mt-3 overflow-hidden"><div class="h-full bg-orange-500 rounded-full" style="width:67%"></div></div><div class="flex justify-between text-[10px] text-slate-400 mt-2"><span>8 livraisons réalisées</span><span>Objectif : 12</span></div></div>
-          <div class="flex justify-between items-center mt-5 mb-3"><h3 class="font-extrabold">Mes livraisons du jour</h3><span class="text-[10px] text-emerald-800 font-bold">Voir tout</span></div>
-          <div class="space-y-3">
-            <article class="bg-white border border-stone-100 rounded-2xl p-3"><div class="flex justify-between"><div><b class="text-sm">Bar Le Prestige</b><p class="text-[10px] text-slate-400 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>Tokoin, Lomé</p></div><span class="pill bg-emerald-50 text-emerald-800 h-fit">Terminé</span></div><div class="flex justify-between items-center mt-3"><span class="text-xs font-bold">18 000 FCFA</span><button class="text-[10px] font-bold text-emerald-800">Détails <i class="fa-solid fa-chevron-right"></i></button></div></article>
-            <article class="bg-white border border-stone-100 rounded-2xl p-3"><div class="flex justify-between"><div><b class="text-sm">Restaurant La Paix</b><p class="text-[10px] text-slate-400 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>Adidogomé, Lomé</p></div><span class="pill bg-orange-50 text-orange-700 h-fit">À faire</span></div><div class="flex justify-between items-center mt-3"><span class="text-xs font-bold">12 500 FCFA</span><button onclick="alert('Navigation vers Restaurant La Paix (simulation).')" class="green-btn text-[10px] px-4 py-2">Démarrer</button></div></article>
-            <article class="bg-white border border-stone-100 rounded-2xl p-3"><div class="flex justify-between"><div><b class="text-sm">Café des Arts</b><p class="text-[10px] text-slate-400 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>Bè, Lomé</p></div><span class="pill bg-slate-100 text-slate-600 h-fit">À venir</span></div><div class="flex justify-between items-center mt-3"><span class="text-xs font-bold">9 000 FCFA</span><button onclick="alert('Livraison démarrée (simulation).')" class="green-btn text-[10px] px-4 py-2">Démarrer</button></div></article>
-          </div>
-          <div class="mt-5 rounded-2xl p-4 bg-emerald-50 border border-emerald-100"><div class="flex justify-between items-center"><b class="text-sm text-emerald-950">Mes performances</b><span class="text-[10px] text-emerald-700">Ce mois</span></div><div class="flex items-end justify-between mt-3"><div><div class="text-2xl font-extrabold text-emerald-950">186</div><div class="text-[10px] text-slate-500">Livraisons réalisées</div></div><div class="text-right"><div class="font-extrabold text-emerald-700">+18%</div><div class="text-[10px] text-slate-500">vs mois dernier</div></div></div></div>
-        </div>
-        <button onclick="openModal('saleModal')" class="absolute bottom-[82px] right-5 w-14 h-14 rounded-2xl bg-orange-500 text-white text-xl shadow-xl shadow-orange-500/30"><i class="fa-solid fa-plus"></i></button>
-        <div class="bottom-nav"><div class="text-emerald-800"><i class="fa-solid fa-house"></i>Accueil</div><div><i class="fa-solid fa-clipboard-list"></i>Tournée</div><div><i class="fa-solid fa-chart-simple"></iStats></div><div><i class="fa-regular fa-user"></i>Profil</div></div>
-      </div></div>
-    </section>
-  </main>
-
-  <!-- MODALE 2FA -->
-  <div id="authModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="authTitle">
-    <div class="modal"><div class="flex justify-between items-start"><div><div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-900 flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-shield-halved"></i></div><h2 id="authTitle" class="text-xl font-extrabold">Vérification en deux étapes</h2><p class="text-xs text-slate-500 mt-1">Saisissez le code à 6 chiffres envoyé sur votre téléphone.</p></div><button onclick="closeModal('authModal')" class="text-slate-400"><i class="fa-solid fa-xmark text-xl"></i></button></div>
-      <div class="flex gap-2 my-6"><input id="otp" maxlength="6" inputmode="numeric" placeholder="••••••" class="field text-center text-2xl tracking-[.5em] font-extrabold" oninput="this.value=this.value.replace(/\\D/g,'').slice(0,6)"></div><button onclick="verify2FA()" class="green-btn w-full">Vérifier le code</button><p class="text-[10px] text-slate-400 text-center mt-3">Prototype : utilisez 123456 pour tester.</p>
-    </div>
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
+ <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+  <div class="flex items-center gap-3">
+   <div class="w-10 h-10 rounded-xl bg-[#145c45] text-white grid place-items-center"><i class="fa-solid fa-bottle-water"></i></div>
+   <div><div class="brand text-lg font-bold leading-none">triad<span class="text-[#f28c28]">.</span></div><div class="text-[11px] text-slate-500 mt-1">ESSIVIVI-Sarl</div></div>
   </div>
+  <nav class="flex gap-2" aria-label="Interfaces">
+   <button class="tab on" data-v="client"><i class="fa-solid fa-bag-shopping mr-2"></i>Client</button>
+   <button class="tab" data-v="manager"><i class="fa-solid fa-chart-line mr-2"></i>Gestionnaire</button>
+   <button class="tab" data-v="agent"><i class="fa-solid fa-truck-fast mr-2"></i>Agent</button>
+  </nav>
+  <span class="hidden md:block text-xs text-slate-500">Maquette avec données fictives</span>
+ </div>
+</header>
 
-  <!-- MODALE NOUVELLE VENTE -->
-  <div id="saleModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="saleTitle">
-    <div class="modal"><div class="flex justify-between items-start"><div><h2 id="saleTitle" class="text-xl font-extrabold">Enregistrer une vente</h2><p class="text-xs text-slate-500 mt-1">Saisie rapide · Agent Koffi Mensah</p></div><button onclick="closeModal('saleModal')" class="text-slate-400"><i class="fa-solid fa-xmark text-xl"></i></button></div>
-      <form id="saleForm" class="space-y-3 mt-5" onsubmit="saveSale(event)">
-        <label class="block text-xs font-bold text-slate-600">Type de boisson<select id="drink" class="field mt-1"><option>Coca-Cola</option><option>Sprite</option><option>Jus d'orange</option><option>Bière locale</option><option>Eau minérale</option></select></label>
-        <div class="grid grid-cols-2 gap-3"><label class="block text-xs font-bold text-slate-600">Quantité<input id="qty" type="number" min="1" value="1" class="field mt-1" required></label><label class="block text-xs font-bold text-slate-600">Montant perçu (FCFA)<input id="amount" type="number" min="0" placeholder="Ex. 15000" class="field mt-1" required></label></div>
-        <button type="button" onclick="captureGPS()" class="w-full rounded-xl border-2 border-dashed border-emerald-300 bg-emerald-50 text-emerald-900 font-extrabold py-4"><i class="fa-solid fa-location-crosshairs mr-2"></i>Capturer la position GPS du point de dépôt</button>
-        <p id="gpsResult" class="text-[10px] text-slate-500">Aucune position capturée pour le moment.</p>
-        <button type="submit" class="primary w-full"><i class="fa-solid fa-check mr-2"></i>Enregistrer la vente</button>
-      </form>
-    </div>
+<main class="max-w-6xl mx-auto p-4 md:p-7">
+
+<!-- CLIENT -->
+<section id="v-client" class="view on">
+ <p class="text-center text-sm text-slate-500 mb-3">Application mobile du client</p>
+ <div class="phone"><div class="pb-24">
+  <div class="ph-head">
+   <div class="flex justify-between items-center">
+    <div class="brand font-bold text-lg">triad<span class="text-orange-300">.</span></div>
+    <button onclick="openM('m2fa')" class="text-xs bg-white/15 px-3 py-2 rounded-xl"><i class="fa-solid fa-shield-halved mr-1"></i>Se connecter</button>
+   </div>
+   <div class="mt-4 flex gap-2">
+    <label class="flex-1 bg-white rounded-xl flex items-center px-3 text-slate-400"><i class="fa-solid fa-magnifying-glass"></i><input id="q" oninput="renderCat()" class="w-full p-3 text-sm outline-none text-slate-700" placeholder="Rechercher une boisson"></label>
+    <div class="relative bg-[#f28c28] rounded-xl px-4 grid place-items-center"><i class="fa-solid fa-cart-shopping"></i><span id="badge" class="absolute -top-2 -right-2 bg-white text-[#145c45] text-[10px] font-bold rounded-full w-5 h-5 grid place-items-center">0</span></div>
+   </div>
   </div>
+  <div class="px-4 pt-4">
+   <h3 class="font-semibold mb-3">Catalogue</h3>
+   <div id="cat" class="grid grid-cols-2 gap-3"></div>
+   <div class="card p-3 mt-4">
+    <div class="flex justify-between text-sm"><b>Mon panier</b><span id="cnt" class="text-slate-400">vide</span></div>
+    <div class="flex justify-between items-center mt-2"><span class="text-xs text-slate-500">Total</span><b id="tot">0 FCFA</b></div>
+    <button onclick="cart={};renderCart()" class="text-[11px] underline text-slate-400 mt-2">Vider le panier</button>
+   </div>
+   <div class="mt-4">
+    <div class="flex justify-between items-center mb-2"><h3 class="font-semibold text-sm">Point de livraison</h3><button onclick="checkPos()" class="text-[11px] font-semibold text-[#1d795b]"><i class="fa-solid fa-location-crosshairs mr-1"></i>Vérifier ma position</button></div>
+    <div class="map h-32 rounded-xl relative border border-emerald-100"><i class="fa-solid fa-location-dot absolute text-[#145c45] text-3xl" style="left:48%;top:35%"></i><span class="absolute left-3 top-3 text-[11px] bg-white/90 rounded px-2 py-1">Dépôt ESSIVIVI, Lomé</span></div>
+    <p id="dmsg" class="text-[12px] rounded-xl p-3 mt-2 leading-relaxed"></p>
+    <button id="ok" onclick="order()" class="btn w-full mt-2" disabled>Valider la commande</button>
+    <button onclick="demoPos()" class="text-[11px] text-slate-400 underline mt-2">Démo : simuler une autre distance</button>
+   </div>
+   <button onclick="tour()" class="w-full mt-4 rounded-xl p-4 text-left text-white bg-[#17231f] flex items-center justify-between gap-3">
+    <span><b class="block text-sm"><i class="fa-solid fa-vr-cardboard mr-2"></i>Visite guidée à 360°</b><small class="text-slate-300 text-[11px]">Découvrez le dépôt en 3D</small></span>
+    <span id="tourTag" class="bg-[#f28c28] text-white rounded-lg px-3 py-2 text-[11px] font-bold text-center"></span>
+   </button>
+  </div>
+  <nav class="bnav" aria-label="Navigation client"><div class="text-[#145c45]"><i class="fa-solid fa-house"></i>Accueil</div><div><i class="fa-solid fa-list"></i>Catalogue</div><div><i class="fa-solid fa-cart-shopping"></i>Panier</div><div><i class="fa-regular fa-user"></i>Profil</div></nav>
+ </div></div>
+</section>
 
-  <script>
-    const navButtons = document.querySelectorAll('.nav-btn');
-    navButtons.forEach(button => button.addEventListener('click', () => {
-      navButtons.forEach(b => b.classList.remove('active'));
-      button.classList.add('active');
-      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-      document.getElementById('view-' + button.dataset.view).classList.add('active');
-      window.scrollTo({top:0, behavior:'smooth'});
-    }));
+<!-- GESTIONNAIRE -->
+<section id="v-manager" class="view">
+ <p class="text-center text-sm text-slate-500 mb-3">Tableau de bord du gestionnaire</p>
+ <div class="panel overflow-hidden md:flex min-h-[720px]">
+  <aside class="hidden md:flex flex-col w-56 shrink-0 bg-[#122b22] p-5 text-sm">
+   <div class="brand font-bold text-xl text-white mb-8">triad<span class="text-[#f28c28]">.</span><div class="text-[11px] text-emerald-200 font-sans font-normal">Administration</div></div>
+   <div class="space-y-1">
+    <button class="side on"><i class="fa-solid fa-chart-pie w-4"></i>Tableau de bord</button>
+    <button class="side soon"><i class="fa-solid fa-box w-4"></i>Livraisons</button>
+    <button class="side soon"><i class="fa-solid fa-truck-fast w-4"></i>Agents</button>
+    <button class="side soon"><i class="fa-solid fa-users w-4"></i>Clients</button>
+    <button class="side soon"><i class="fa-solid fa-bottle-water w-4"></i>Produits</button>
+    <button class="side soon"><i class="fa-solid fa-gear w-4"></i>Paramètres</button>
+   </div>
+   <div class="mt-auto text-xs text-emerald-100 bg-white/10 rounded-md p-3"><i class="fa-solid fa-shield-halved text-orange-300 mr-1"></i><b class="text-white">Connexion sécurisée</b><p class="mt-1">Double authentification activée</p></div>
+  </aside>
+  <div class="flex-1 min-w-0 p-5 md:p-7 bg-[#f7f8f5]">
+   <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
+    <div><p id="today" class="text-sm text-slate-500 capitalize"></p><h2 class="text-2xl font-bold mt-1">Vue d’ensemble</h2></div>
+    <div class="flex items-center gap-2"><div class="w-10 h-10 rounded-full bg-emerald-100 text-[#145c45] grid place-items-center font-bold">AD</div><div><b class="text-sm block">Admin dépôt</b><span class="text-xs text-slate-400">Gestionnaire</span></div></div>
+   </div>
+   <div class="grid md:grid-cols-3 gap-4 mb-4">
+    <div class="panel p-4"><div class="text-sm text-slate-500">Chiffre d’affaires, 7 jours</div><div class="text-2xl font-bold mt-2">2 845 000 <small class="text-sm font-medium text-slate-500">FCFA</small></div><div class="text-xs text-[#1d795b] font-semibold mt-1">+12,8 % sur la semaine précédente</div></div>
+    <div class="panel p-4"><div class="text-sm text-slate-500">Livraisons, 7 jours</div><div class="text-2xl font-bold mt-2">128</div><div class="text-xs text-slate-400 mt-1">dont 6 en cours aujourd’hui</div></div>
+    <div class="panel p-4"><div class="text-sm text-slate-500">Meilleur agent</div><div class="text-2xl font-bold mt-2">Koffi Mensah</div><div class="text-xs text-slate-400 mt-1">41 livraisons, AGT-001</div></div>
+   </div>
+   <div class="grid md:grid-cols-3 gap-4 mb-4">
+    <div class="panel p-4 md:col-span-2">
+     <h3 class="font-semibold text-sm">Ventes par jour</h3><p class="text-xs text-slate-400">En milliers de FCFA</p>
+     <div id="bars" class="h-40 flex items-end gap-3 mt-4 border-b border-stone-200"></div>
+     <div id="days" class="flex gap-3 text-xs text-slate-400 mt-1"></div>
+    </div>
+    <div class="panel p-4">
+     <h3 class="font-semibold text-sm">Répartition des ventes</h3>
+     <div class="flex justify-center py-4"><div id="donut" class="w-28 h-28 rounded-full grid place-items-center"><div class="w-16 h-16 bg-white rounded-full"></div></div></div>
+     <div id="legend" class="space-y-2 text-xs"></div>
+    </div>
+   </div>
+   <div class="panel p-4 mb-4 border-l-4 border-l-[#f28c28] flex flex-wrap items-center justify-between gap-3">
+    <div><div class="text-sm text-slate-500">Point de dépôt le plus rentable</div><h3 class="font-bold text-lg">Bar Le Roi</h3><p class="text-xs text-slate-400">15 livraisons cette semaine</p></div>
+    <div class="text-right"><div class="text-2xl font-bold">385 000 F</div><div class="text-xs text-slate-400">montant perçu</div></div>
+   </div>
+   <div class="panel p-4">
+    <div class="flex justify-between items-center mb-3"><div><h3 class="font-semibold text-sm">Dernières livraisons</h3><p class="text-xs text-slate-400">Agent, client, position et montant</p></div><button onclick="exportCsv()" class="text-sm font-semibold text-[#1d795b]"><i class="fa-solid fa-download mr-1"></i>Exporter en CSV</button></div>
+    <div class="overflow-x-auto"><table class="tb"><thead><tr><th>Agent</th><th>Téléphone client</th><th>Adresse</th><th>GPS (lat / long)</th><th>Qté</th><th>Montant</th><th>Heure</th><th>Statut</th></tr></thead><tbody id="tx"></tbody></table></div>
+    <p class="text-xs text-slate-400 mt-3">Lignes 1 à 6 sur 128</p>
+   </div>
+  </div>
+ </div>
+</section>
 
-    let cartCount = 0, cartTotal = 0;
-    function addToCart(name, price) {
-      cartCount++; cartTotal += price;
-      document.getElementById('cartBadge').textContent = cartCount;
-      document.getElementById('cartCount').textContent = cartCount + (cartCount > 1 ? ' articles' : ' article');
-      document.getElementById('cartTotal').textContent = cartTotal.toLocaleString('fr-FR') + ' FCFA';
-    }
-    function openModal(id){document.getElementById(id).classList.add('show')}
-    function closeModal(id){document.getElementById(id).classList.remove('show')}
-    document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.addEventListener('click', e => {if(e.target===backdrop) backdrop.classList.remove('show')}));
-    function unlockTour(){alert('Visite guidée à 360°\\n\\nDéblocage : 200 FCFA.\\nCette étape simule l’ouverture du parcours de paiement.');}
-    function verify2FA(){
-      const code=document.getElementById('otp').value;
-      if(code.length!==6){alert('Veuillez saisir les 6 chiffres du code.');return}
-      if(code==='123456'){alert('Code 2FA validé ! Connexion de démonstration réussie.');closeModal('authModal')}
-      else{alert('Code incorrect. Réessayez.')}
-    }
-    function captureGPS(){
-      const result=document.getElementById('gpsResult');
-      result.textContent='Recherche de la position GPS...';
-      if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(
-          pos=>{result.textContent='Position capturée : '+pos.coords.latitude.toFixed(5)+', '+pos.coords.longitude.toFixed(5);result.dataset.lat=pos.coords.latitude;result.dataset.lng=pos.coords.longitude},
-          ()=>{result.textContent='Position simulée : 6.17240, 1.23140 (autorisation GPS refusée ou indisponible).';result.dataset.lat='6.17240';result.dataset.lng='1.23140'},
-          {enableHighAccuracy:true,timeout:7000}
-        );
-      } else {result.textContent='Position simulée : 6.17240, 1.23140';}
-    }
-    function saveSale(event){
-      event.preventDefault();
-      const drink=document.getElementById('drink').value, qty=document.getElementById('qty').value, amount=document.getElementById('amount').value;
-      const gps=document.getElementById('gpsResult').textContent;
-      alert('Vente enregistrée (simulation)\\n'+drink+' · '+qty+' unité(s)\\nMontant : '+Number(amount).toLocaleString('fr-FR')+' FCFA\\n'+gps);
-      closeModal('saleModal');document.getElementById('saleForm').reset();document.getElementById('gpsResult').textContent='Aucune position capturée pour le moment.';
-    }
-  </script>
+<!-- AGENT -->
+<section id="v-agent" class="view">
+ <p class="text-center text-sm text-slate-500 mb-3">Application mobile de l’agent</p>
+ <div class="phone"><div class="pb-24">
+  <div class="ph-head">
+   <div class="flex items-center justify-between">
+    <div class="flex items-center gap-3"><div class="w-11 h-11 rounded-full bg-orange-300 text-[#17231f] grid place-items-center font-bold">KM</div><div><p class="text-xs text-emerald-100">Bonjour</p><h2 class="font-bold">Koffi Mensah</h2></div></div>
+    <span class="pill bg-emerald-300 text-emerald-950"><i class="fa-solid fa-circle text-[7px] mr-1"></i>En ligne</span>
+   </div>
+   <div class="grid grid-cols-2 gap-2 mt-5">
+    <div class="bg-white/10 rounded-xl p-3"><p class="text-xs text-emerald-100">Ventes du jour</p><b id="aSales" class="text-xl"></b></div>
+    <div class="bg-white/10 rounded-xl p-3"><p class="text-xs text-emerald-100">Livraisons faites</p><b class="text-xl"><span id="aDone"></span> <small class="text-xs font-normal">sur 12</small></b></div>
+   </div>
+  </div>
+  <div class="px-4 pt-4">
+   <div class="card p-4"><div class="flex justify-between text-sm"><b>Objectif du jour</b><span id="aPc" class="font-semibold text-[#1d795b]"></span></div><div class="h-2 bg-stone-100 rounded-full mt-3 overflow-hidden"><div id="aBar" class="h-full bg-[#f28c28] rounded-full"></div></div></div>
+   <h3 class="font-semibold mt-5 mb-3">Mes livraisons du jour</h3>
+   <div id="aList" class="space-y-3"></div>
+  </div>
+  <button onclick="openM('msale')" aria-label="Enregistrer une vente" class="absolute bottom-20 right-4 w-14 h-14 rounded-2xl bg-[#f28c28] text-white text-xl shadow-lg"><i class="fa-solid fa-plus"></i></button>
+  <nav class="bnav" aria-label="Navigation agent"><div class="text-[#145c45]"><i class="fa-solid fa-house"></i>Accueil</div><div><i class="fa-solid fa-clipboard-list"></i>Tournée</div><div><i class="fa-solid fa-chart-simple"></i>Bilan</div><div><i class="fa-regular fa-user"></i>Profil</div></nav>
+ </div></div>
+</section>
+</main>
+
+<!-- Fenêtres -->
+<div id="m2fa" class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="t2fa"><div class="modal">
+ <h2 id="t2fa" class="text-xl font-bold">Vérification en deux étapes</h2>
+ <p class="text-sm text-slate-500 mt-1">Saisissez le code à 6 chiffres affiché dans votre application d’authentification.</p>
+ <input id="otp" maxlength="6" inputmode="numeric" autocomplete="one-time-code" placeholder="000000" aria-label="Code à 6 chiffres" oninput="this.value=this.value.replace(/\D/g,'').slice(0,6)" class="field text-center text-2xl tracking-[.4em] font-bold my-5">
+ <div class="flex gap-2"><button onclick="closeM('m2fa')" class="field text-center font-semibold">Annuler</button><button onclick="verify()" class="btn-g w-full">Vérifier</button></div>
+ <p class="text-xs text-slate-400 text-center mt-3">Maquette : le code de test est 123456.</p>
+</div></div>
+
+<div id="mtour" class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="ttour"><div class="modal">
+ <h2 id="ttour" class="text-xl font-bold">Débloquer la visite 360°</h2>
+ <p class="text-sm text-slate-500 mt-1">Accès à la visite guidée du dépôt pour 200 FCFA, payé une seule fois.</p>
+ <select id="pay" class="field mt-5"><option>Flooz</option><option>T-Money</option></select>
+ <div class="flex gap-2 mt-4"><button onclick="closeM('mtour')" class="field text-center font-semibold">Annuler</button><button onclick="payTour()" class="btn-g w-full">Payer 200 FCFA</button></div>
+ <p class="text-xs text-slate-400 text-center mt-3">Maquette : aucun paiement réel n’est effectué.</p>
+</div></div>
+
+<div id="msale" class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="tsale"><div class="modal">
+ <div class="flex justify-between items-start"><div><h2 id="tsale" class="text-xl font-bold">Enregistrer une vente</h2><p class="text-sm text-slate-500 mt-1">Saisie rapide sur le terrain</p></div><button onclick="closeM('msale')" aria-label="Fermer" class="text-slate-400"><i class="fa-solid fa-xmark text-xl"></i></button></div>
+ <form id="saleForm" class="space-y-3 mt-5" onsubmit="saveSale(event)">
+  <label class="block text-sm font-medium text-slate-600">Boisson<select id="drink" class="field mt-1"></select></label>
+  <div class="grid grid-cols-2 gap-3">
+   <label class="block text-sm font-medium text-slate-600">Quantité<input id="qty" type="number" min="1" value="1" class="field mt-1" required></label>
+   <label class="block text-sm font-medium text-slate-600">Montant perçu (FCFA)<input id="amount" type="number" min="0" placeholder="15000" class="field mt-1" required></label>
+  </div>
+  <button type="button" onclick="captureGPS()" class="w-full rounded-xl border-2 border-dashed border-emerald-300 bg-emerald-50 text-[#145c45] font-bold py-4"><i class="fa-solid fa-location-crosshairs mr-2"></i>Capturer la position du point de dépôt</button>
+  <p id="gpsOut" class="text-xs text-slate-500">Aucune position capturée.</p>
+  <button type="submit" class="btn w-full">Enregistrer la vente</button>
+ </form>
+</div></div>
+
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#17231f] text-white text-sm px-4 py-2 rounded-xl opacity-0 transition-opacity pointer-events-none z-[60]" role="status"></div>
+
+<script>
+const $=id=>document.getElementById(id), f=n=>n.toLocaleString('fr-FR');
+const DEPOT=[6.1725,1.2314];
+const P=[
+ ['Coca-Cola','1,5 L',1000,'fa-bottle-water','#fee2e2','#b91c1c'],
+ ['Sprite','1,5 L',1000,'fa-bottle-droplet','#dcfce7','#15803d'],
+ ['Jus d’orange','1 L',1500,'fa-glass-water','#ffedd5','#c2410c'],
+ ['Bière locale','65 cl',800,'fa-beer-mug-empty','#fef3c7','#b45309'],
+ ['Eau minérale','1,5 L',500,'fa-droplet','#e0f2fe','#0369a1']];
+const ST={livree:['Livrée','bg-emerald-50 text-emerald-800'],en_cours:['En cours','bg-amber-50 text-amber-800'],en_attente:['En attente','bg-slate-100 text-slate-600']};
+let cart={},dist=null,sim=0,tourOn=false,gps=null,tt;
+
+/* Navigation et fenêtres */
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+b.dataset.v));
+ scrollTo({top:0,behavior:'smooth'})});
+const openM=id=>$(id).classList.add('on'), closeM=id=>$(id).classList.remove('on');
+document.querySelectorAll('.modal-bg').forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove('on')});
+document.querySelectorAll('.soon').forEach(e=>e.onclick=()=>toast('Cette page n’est pas incluse dans la maquette'));
+function toast(t){const e=$('toast');e.textContent=t;e.style.opacity=1;clearTimeout(tt);tt=setTimeout(()=>e.style.opacity=0,2600)}
+
+/* Client */
+function renderCat(){
+ const q=$('q').value.toLowerCase();
+ $('cat').innerHTML=P.map((p,i)=>p[0].toLowerCase().includes(q)?`<article class="card p-3"><div class="h-20 rounded-xl grid place-items-center text-4xl" style="background:${p[4]};color:${p[5]}"><i class="fa-solid ${p[3]}"></i></div><div class="font-semibold text-sm mt-2">${p[0]}</div><div class="text-xs text-slate-400">${p[1]}</div><div class="flex justify-between items-center mt-2"><b class="text-sm text-[#145c45]">${f(p[2])} F</b><button onclick="add(${i})" aria-label="Ajouter ${p[0]}" class="w-8 h-8 rounded-xl bg-[#f28c28] text-white"><i class="fa-solid fa-plus"></i></button></div></article>`:'').join('')}
+const count=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+const total=()=>Object.entries(cart).reduce((s,[i,n])=>s+P[i][2]*n,0);
+const add=i=>{cart[i]=(cart[i]||0)+1;renderCart()};
+const km=d=>d<1?Math.round(d*1000)+' m':d.toFixed(1).replace('.',',')+' km';
+function renderCart(){
+ const c=count();$('badge').textContent=c;$('cnt').textContent=c?c+(c>1?' articles':' article'):'vide';$('tot').textContent=f(total())+' FCFA';
+ let cls,txt;
+ if(dist===null){cls='bg-slate-100 text-slate-600';txt='Position non vérifiée. Il faut être à moins de 1 km du point de dépôt pour valider.'}
+ else if(dist>1){cls='bg-amber-50 text-amber-800';txt=`Vous êtes à <b>${km(dist)}</b> du dépôt. Il faut être à moins de <b>1 km</b> pour valider.`}
+ else{cls='bg-emerald-50 text-emerald-800';txt=`Vous êtes à <b>${km(dist)}</b> du dépôt : vous pouvez valider.`}
+ $('dmsg').className='text-[12px] rounded-xl p-3 mt-2 leading-relaxed '+cls;$('dmsg').innerHTML=txt;
+ $('ok').disabled=!(c&&dist!==null&&dist<=1)}
+function hav(a,b,c,d){const r=x=>x*Math.PI/180,h=Math.sin(r(c-a)/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(r(d-b)/2)**2;return 12742*Math.asin(Math.sqrt(h))}
+const demoPos=()=>{dist=[2.5,0.4][sim++%2];renderCart()};
+function checkPos(){
+ if(!navigator.geolocation)return demoPos();
+ navigator.geolocation.getCurrentPosition(p=>{dist=hav(p.coords.latitude,p.coords.longitude,...DEPOT);renderCart()},()=>{toast('GPS indisponible, position simulée');demoPos()},{timeout:6000})}
+function order(){toast('Commande envoyée, statut « en attente »');cart={};renderCart()}
+function tour(){tourOn?toast('Ouverture de la visite 360° (non incluse dans la maquette)'):openM('mtour')}
+function payTour(){tourOn=true;closeM('mtour');renderTour();toast('Visite 360° débloquée')}
+function renderTour(){$('tourTag').innerHTML=tourOn?'<i class="fa-solid fa-lock-open mr-1"></i>Débloquée':'200 FCFA<br>à débloquer'}
+function verify(){const c=$('otp').value;
+ if(c.length<6)return toast('Saisissez les 6 chiffres du code');
+ if(c==='123456'){closeM('m2fa');$('otp').value='';toast('Code validé, vous êtes connecté')}else toast('Code incorrect, réessayez')}
+
+/* Gestionnaire */
+const DAYS=[['Lun',310],['Mar',420],['Mer',365],['Jeu',480],['Ven',390],['Sam',560],['Dim',320]];
+const MIX=[['Coca-Cola',38,'#145c45'],['Sprite',26,'#f28c28'],['Jus d’orange',17,'#f5c451'],['Bière locale',12,'#9eb8a9'],['Eau',7,'#cbd5d1']];
+const TX=[
+ ['AGT-001','+228 90 12 34 56','Tokoin, Lomé',6.1724,1.2314,12,18000,'14:32','livree'],
+ ['AGT-003','+228 91 45 67 89','Adidogomé, Lomé',6.2011,1.1668,8,12500,'14:18','en_cours'],
+ ['AGT-002','+228 99 87 65 43','Bè, Lomé',6.1372,1.2548,20,26000,'13:56','livree'],
+ ['AGT-001','+228 92 22 11 00','Nyékonakpoè, Lomé',6.1285,1.2132,6,9000,'13:41','livree'],
+ ['AGT-004','+228 93 08 17 26','Agoè, Lomé',6.2392,1.2054,15,21500,'13:10','livree'],
+ ['AGT-002','+228 98 33 54 90','Hédzranawoé, Lomé',6.1819,1.2266,10,14000,'12:47','en_attente']];
+function renderMgr(){
+ $('today').textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ const mx=Math.max(...DAYS.map(d=>d[1]));
+ $('bars').innerHTML=DAYS.map(d=>`<div title="${d[0]} : ${d[1]} 000 FCFA" class="flex-1 rounded-t bg-[#f28c28]" style="height:${d[1]/mx*100}%"></div>`).join('');
+ $('days').innerHTML=DAYS.map(d=>`<span class="flex-1 text-center">${d[0]}</span>`).join('');
+ let a=0;$('donut').style.background='conic-gradient('+MIX.map(m=>{const s=`${m[2]} ${a}% ${a+m[1]}%`;a+=m[1];return s}).join(',')+')';
+ $('legend').innerHTML=MIX.map(m=>`<div class="flex justify-between"><span><i class="fa-solid fa-circle text-[7px] mr-2" style="color:${m[2]}"></i>${m[0]}</span><b>${m[1]} %</b></div>`).join('');
+ $('tx').innerHTML=TX.map(t=>`<tr><td class="font-semibold">${t[0]}</td><td>${t[1]}</td><td>${t[2]}</td><td>${t[3]} / ${t[4]}</td><td>${t[5]}</td><td class="font-semibold">${f(t[6])} F</td><td>${t[7]}</td><td><span class="pill ${ST[t[8]][1]}">${ST[t[8]][0]}</span></td></tr>`).join('')}
+function exportCsv(){
+ const rows=[['Agent','Telephone','Adresse','Latitude','Longitude','Quantite','Montant','Heure','Statut'],...TX];
+ const a=document.createElement('a');
+ a.href=URL.createObjectURL(new Blob(['\ufeff'+rows.map(r=>r.join(';')).join('\n')],{type:'text/csv'}));
+ a.download='livraisons.csv';a.click();toast('Fichier CSV généré')}
+
+/* Agent */
+let D=[{n:'Bar Le Prestige',a:'Tokoin',m:18000,s:'livree'},{n:'Restaurant La Paix',a:'Adidogomé',m:12500,s:'en_cours'},{n:'Café des Arts',a:'Bè',m:9000,s:'en_attente'},{n:'Maquis Chez Ama',a:'Nyékonakpoè',m:15000,s:'en_attente'}];
+function renderAgent(){
+ const liv=D.filter(d=>d.s==='livree'),done=7+liv.length,sales=67500+liv.reduce((s,d)=>s+d.m,0),pc=Math.min(100,Math.round(done/12*100));
+ $('aSales').textContent=f(sales)+' F';$('aDone').textContent=done;$('aPc').textContent=pc+' %';$('aBar').style.width=pc+'%';
+ $('aList').innerHTML=D.map((d,i)=>`<article class="card p-3"><div class="flex justify-between gap-2"><div><b class="text-sm">${d.n}</b><p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>${d.a}</p></div><span class="pill h-fit ${ST[d.s][1]}">${ST[d.s][0]}</span></div><div class="flex justify-between items-center mt-3"><span class="text-sm font-semibold">${f(d.m)} FCFA</span>${d.s==='livree'?'':`<button onclick="step(${i})" class="btn-g text-xs px-4 py-2">${d.s==='en_cours'?'Terminer':'Démarrer'}</button>`}</div></article>`).join('')}
+function step(i){D[i].s=D[i].s==='en_attente'?'en_cours':'livree';renderAgent();toast(D[i].s==='livree'?'Livraison terminée':'Livraison démarrée')}
+function captureGPS(){
+ const r=$('gpsOut'),ok=(la,lo,s)=>{gps=[la,lo];r.textContent=(s?'Position simulée : ':'Position capturée : ')+la.toFixed(5)+', '+lo.toFixed(5)};
+ r.textContent='Recherche de la position…';
+ if(!navigator.geolocation)return ok(6.1724,1.2314,1);
+ navigator.geolocation.getCurrentPosition(p=>ok(p.coords.latitude,p.coords.longitude),()=>ok(6.1724,1.2314,1),{enableHighAccuracy:true,timeout:7000})}
+function saveSale(e){
+ e.preventDefault();
+ if(!gps)return toast('Capturez d’abord la position du point de dépôt');
+ const dr=$('drink').value,q=$('qty').value,m=+$('amount').value;
+ D.unshift({n:`Vente directe : ${dr} ×${q}`,a:gps[0].toFixed(4)+', '+gps[1].toFixed(4),m,s:'livree'});
+ closeM('msale');$('saleForm').reset();gps=null;$('gpsOut').textContent='Aucune position capturée.';
+ renderAgent();toast('Vente enregistrée : '+f(m)+' FCFA')}
+
+$('drink').innerHTML=P.map(p=>`<option>${p[0]}</option>`).join('');
+renderCat();renderCart();renderTour();renderMgr();renderAgent();
+</script>
 </body>
 </html>
