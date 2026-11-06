@@ -1,87 +1,150 @@
-# 🥤 Triad-Beverage-Delivery | ESSIVIVI-Sarl
+# 🥤 Triad-Beverage-Delivery
 
-> **Projet SAÉ : Programmation Distribuée (Architecture Microservices)**
-> *Livraison intelligente. Expérience exceptionnelle.*
+### La livraison de boissons, pensée en microservices.
 
-## 📝 Description du Projet
-Ce projet est une application distribuée de livraison de boissons développée pour l'entreprise fictive **ESSIVIVI-Sarl**. L'objectif est de digitaliser le processus de vente, de dépôt et de livraison de boissons, tout en fournissant au gestionnaire un outil de pilotage (Business Intelligence) en temps réel.
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-Microservices-009688?logo=fastapi&logoColor=white)
+![Status](https://img.shields.io/badge/Statut-En%20d%C3%A9veloppement-orange)
+![SAÉ](https://img.shields.io/badge/SA%C3%89-Programmation%20Distribu%C3%A9e-blue)
 
-L'application repose sur une **architecture en microservices** et utilise **FastAPI** (Python) pour le backend. Elle est développée dans le cadre de la SAÉ "Développer des applications communicantes".
+> Projet SAÉ **Programmation Distribuée** pour l'entreprise **ESSIVIVI-Sarl**.
+> Trois profils, trois services, une seule plateforme : vendre, livrer, piloter.
 
-## 🏗️ Architecture (Microservices)
-Le système est divisé en 3 interfaces distinctes (et potentiellement 3 microservices backend) :
+---
 
-1.  **📱 Application Mobile Client :** Permet aux clients de consulter le catalogue, gérer un panier, valider la proximité GPS (Google Maps API) et débloquer une visite guidée 3D (fonctionnalité payante).
-2.  **💻 Web App Gestionnaire :** Un tableau de bord (Dashboard) pour le responsable de ESSIVIVI-Sarl. Il permet de suivre les ventes, les performances des agents, et d'identifier les points de dépôt les plus rentables.
-3.  **🚚 Application Mobile Agent Commercial :** Un outil terrain pour les commerciaux. Ils peuvent voir leur tournée, saisir une vente rapidement et capturer les coordonnées GPS du point de dépôt.
+## 🎯 Le problème
 
-## ✨ Fonctionnalités Clés
-- **Authentification sécurisée :** Connexion avec double authentification (2FA).
-- **Géolocalisation :** Vérification de la distance client/dépôt via l'API Google Maps.
-- **Dashboard Admin :** Visualisation des KPIs (Chiffre d'affaires, livraisons, top agents).
-- **Expérience immersive :** Visite guidée à 360° (Visite 3D) déblocable pour 200 FCFA.
-- **Saisie Terrain :** Formulaire optimisé pour les agents avec capture GPS.
+ESSIVIVI-Sarl livre des boissons à des bars et restaurants. Aujourd'hui, le gérant ne sait pas **qui vend quoi, où, et avec quelle rentabilité**.
 
-## 🛠️ Stack Technique
-- **Backend :** Python, FastAPI
-- **Base de données :** [À définir : ex. Firebase Realtime DB / Azure DB / PostgreSQL]
-- **Frontend (Maquette) :** HTML, Tailwind CSS, JavaScript
-- **Outils :** VS Code, Git, GitHub
+**Notre réponse :** une plateforme où chaque vente est enregistrée avec sa position GPS, ses montants et son agent, et où le gérant voit tout en temps réel.
 
-## 📂 Structure du Dépôt
+---
+
+## 🏗️ Architecture
+
+```text
+                  ┌───────────────────────────┐
+                  │    BASE DE DONNÉES CLOUD  │
+                  └─────────────┬─────────────┘
+                                │
+      ┌─────────────────────────┼─────────────────────────┐
+      │                         │                         │
+┌─────▼──────────┐     ┌────────▼───────┐     ┌───────────▼────┐
+│ microservice-  │     │ microservice-  │     │ microservice-  │
+│    client      │     │    manager     │     │     agent      │
+│ FastAPI :8001  │     │ FastAPI :8000  │     │ FastAPI :8002  │
+└─────▲──────────┘     └────────▲───────┘     └───────────▲────┘
+      │ HTTP/JSON               │ HTTP/JSON               │ HTTP/JSON
+┌─────┴──────────┐     ┌────────┴───────┐     ┌───────────┴────┐
+│  📱 App Client │     │ 💻 Dashboard   │     │ 🚚 App Agent   │
+│                │     │  Gestionnaire  │     │   Commercial   │
+└────────────────┘     └────────────────┘     └────────────────┘
+```
+
+| Service | Rôle | Port |
+|---|---|---|
+| `microservice-client` | Catalogue, panier, vérification de distance, visite 3D | 8001 |
+| `microservice-manager` | Dashboard, KPIs, administration | 8000 |
+| `microservice-agent` | Tournée du jour, saisie de vente, capture GPS | 8002 |
+
+---
+
+## ✨ Fonctionnalités clés
+
+- 🔐 **Authentification 2FA** : connexion sécurisée avec code à 6 chiffres
+- 📍 **Vérification de proximité** : la commande ne se valide que si le client est assez proche du point de dépôt (Google Maps API)
+- 🧭 **Visite guidée 360°** : déblocable pour **200 FCFA**
+- 📊 **Dashboard gestionnaire** : chiffre d'affaires, livraisons, meilleur agent, **point de dépôt le plus rentable**
+- 🛰️ **Saisie terrain** : l'agent enregistre quantité, montant et position GPS en quelques secondes
+
+---
+
+## 🛠️ Stack technique
+
+| Couche | Technologie |
+|---|---|
+| Backend | Python, FastAPI, Uvicorn |
+| Base de données | Cloud (Firebase / Azure DB / Amazon RDS, choix à valider) |
+| Maquette | HTML, Tailwind CSS, JavaScript |
+| Outils | VS Code, Git, GitHub |
+
+---
+
+## 🚀 Démarrage rapide
+
+**1. Voir la maquette**
+
+```bash
+git clone https://github.com/Prosper397/triad-beverage-delivery-microservices.git
+cd triad-beverage-delivery-microservices
+```
+
+Ouvrez `index.html` dans votre navigateur et naviguez entre les 3 interfaces.
+
+**2. Lancer un microservice (exemple : Gestionnaire)**
+
+```bash
+cd microservice-manager
+pip install fastapi uvicorn
+uvicorn main:app --reload
+```
+
+- API : http://127.0.0.1:8000
+- Documentation Swagger : http://127.0.0.1:8000/docs
+
+---
+
+## 📂 Structure du dépôt
+
 ```text
 triad-beverage-delivery-microservices/
-│
-├── index.html                      # Maquette interactive (Prototype HTML/CSS/JS)
-├── README.md                       # Documentation du projet
-│
-├── microservice-client/            # (À venir) Backend FastAPI pour l'app Client
-├── microservice-manager/           # (À venir) Backend FastAPI pour le Dashboard
-└── microservice-agent/             # (À venir) Backend FastAPI pour l'app Agent
+├── index.html               # Maquette interactive
+├── README.md
+├── LICENSE
+├── microservice-client/     # API de l'app Client
+├── microservice-manager/    # API du Dashboard
+└── microservice-agent/      # API de l'app Agent
+```
 
-🚀 Installation et Lancement (Prototype Actuel)
+---
 
-Puisque le projet est actuellement au stade de maquette interactive, voici comment le visualiser :
+## 👥 L'équipe
 
-    Clonez ce dépôt :
-    bash
+| Membre | GitHub |
+|---|---|
+| **Prosper** | [@Prosper397](https://github.com/Prosper397) |
+| **Peace** | [@TCHAZINON](https://github.com/TCHAZINON) |
+| **Joanna** | [@Jo-dev-pop](https://github.com/Jo-dev-pop) |
 
-    git clone https://github.com/Prosper397/triad-beverage-delivery-microservices.git
+---
 
-    Ouvrez le fichier index.html dans votre navigateur web (double-clic).
+## 🔀 Workflow Git
 
-    Utilisez le menu de navigation en haut pour basculer entre les 3 interfaces (Client, Gestionnaire, Agent).
+```text
+main  ◄── Pull Request ◄── feature-xxx  (une branche par fonctionnalité)
+```
 
-👥 Équipe du Projet
+1. On ne code **jamais** directement sur `main`
+2. Une branche par fonctionnalité : `feature-client`, `feature-manager`, `feature-agent`
+3. Pull Request relue par un coéquipier avant fusion
 
-    [Prosper] - Chef de projet & Développeur
+---
 
-    [Nom Camarade 1] - Développeur
+## 🗺️ Roadmap
 
-    [Nom Camarade 2] - Développeur
+- [x] Analyse du cahier des charges
+- [x] Maquette interactive (UI/UX)
+- [x] Structure des 3 microservices
+- [ ] Modèles de données (Livraison, Agent, Client, Produit)
+- [ ] Routes API Manager, Agent et Client
+- [ ] Base de données cloud
+- [ ] Authentification 2FA
+- [ ] Intégration Google Maps API
+- [ ] Connexion de la maquette à l'API
+- [ ] Tests et déploiement
 
-📅 Roadmap (Prochaines étapes)
+---
 
-    ☑
-
-    Analyse du cahier des charges
-    ☑
-
-    Conception de la maquette interactive (UI/UX)
-    □
-
-    Initialisation des microservices FastAPI
-    □
-
-    Mise en place de la base de données Cloud
-    □
-
-    Intégration de l'API Google Maps
-    □
-
-    Implémentation de l'authentification 2FA
-    □
-
-    Tests et déploiement
-
-Projet réalisé dans le cadre de la SAÉ "Programmation Distribuée" - 2026/2027.
+<p align="center">
+  SAÉ Programmation Distribuée · 2026/2027 · Fait avec ☕ par l'équipe Triad
+</p>
