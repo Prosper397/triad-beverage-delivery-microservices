@@ -133,12 +133,12 @@ La branche `main` reste stable. Chaque fonctionnalité se développe sur sa prop
 - [x] Maquette interactive
 - [x] Structure des trois microservices
 - [x] Schéma de la base de données
-- [ ] Routes du gestionnaire (ventes, agents, points de dépôt rentables)
-- [ ] Routes de l'agent (saisie de vente avec GPS)
-- [ ] Routes du client (catalogue, panier, vérification de distance)
-- [ ] Authentification et 2FA
+- [x] Routes du gestionnaire (ventes, agents, points de dépôt rentables)
+- [x] Routes de l'agent (saisie de vente avec GPS)
+- [x] Routes du client (catalogue, panier, vérification de distance)
+- [x] Authentification et 2FA (JWT, TOTP/pyotp)
 - [ ] Intégration de Google Maps
-- [ ] Dashboard en temps réel (WebSocket)
+- [x] Dashboard en temps réel (WebSocket, endpoint `/ws/dashboard` côté gestionnaire)
 - [ ] Connexion de la maquette aux API
 - [ ] Tests et déploiement
 
