@@ -265,7 +265,19 @@ def repartition_boissons(user: Utilisateur = Depends(require_role("manager")), d
 
 # -------- Temps réel (WebSocket) --------
 @app.websocket("/ws/dashboard")
-async def ws_dashboard(websocket: WebSocket):
+async def ws_dashboard(websocket: WebSocket, token: str | None = None):
+    if not token:
+        await websocket.close(code=1008)
+        return
+    try:
+        payload = decode_token(token)
+    except HTTPException:
+        await websocket.close(code=1008)
+        return
+    if payload.get("pending_2fa") or payload.get("role") != "manager":
+        await websocket.close(code=1008)
+        return
+
     await ws_manager.connect(websocket)
     try:
         await websocket.send_json({"type": "connected", "message": "Dashboard temps réel connecté"})
